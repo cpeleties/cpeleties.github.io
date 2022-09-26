@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Christopher Peleties</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="sql.html">SQL</a></li>
+							<li><a href="python.html">Python</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://uk.linkedin.com/in/chrispeleties" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+						
+							<li><a href="https://github.com/cpeleties" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">July 2022</span>
+									<h1>Data Manipulation<br />
+									In Sql</h1>
+									<p>The ongoing Wimbledon 2022 championships have inspired me to put a newly discovered excitement for data analysis
+									into practice.<p>
+								</header>
+								<div class="image main"><img src="images/sql.jpg" alt="" /></div>
+								<h2>The Project</h2>
+								<p> The goal of this project was to produce a Tableau visualisation comparing the success of this years womens finalists, Elena Rybakina and Ons Jabeur, an initial aim of three comparisons was set. These being: the variation of WTA Rank for each player throughout their career, the Wimbledon performance of each player throughout their respective careers and finally the road to this years final for both players.
+									Additionally, a map of locations in which each player had previously won matches would be added to the visualisation and hence the data for this was prepared. </p>
+														
+								<h3>Wimbledon Career Comparison</h3>
+								<p>The first task was to refine the dataset to display only the Wimbledon matches played by Elena Rybakina and Ons Jabeur, this years Ladies singles finalists.
+									The original dataset described tennis matches with a winner_name column and a loser_name column. Therefore it was neccesary to generate a temporary table in which there is a column for the Player (either Jabeur or Rybakina) and the result of the match.
+								Using the CASE function, matches were filtered based upon whether Jabeur and Rybakina were the winner or loser and inserted into a new table.
+								The sum function was used to total the values from each match.	
+							</p><span class="image fit"><img src="images/Wimbledoncareers.jpg" alt="" /></span>
+
+								<h3>Career rank variation</h3>
+								<p><span class="image right"><img src="images/careerank.jpg" alt="" /></span>The second point of focus was to understand how each of the players rankings had varied throughout their careers, therefore the data was refined to select games in which either Rybakina or Jabeur
+									had played and extract the rank of the winner or loser, depending on which they had been in that match.
+								</p>
+								<p>Next, a simple query to select the run of games for each player in this years competition was carried out.</p>
+								
+								<h3>Success Map</h3>
+								<p><span class="image left"><img src="images/countries.jpg" alt="" /></span>Finally, in order to use the geographical features within Tableau, the locations of each match needed to be assigned, rather than the tennis tournament name.
+									A seperate list was produced assigning country names to the tournaments and competitions that vary in location based upon the year were seperately considered. Using a join, these were attatched to the data set and the data was grouped to total the number of matches won in each location.</p>
+							
+									<br/>
+									<br/>
+									<br/>
+									<br/>
+							
+								<h3>Project Code</h3>
+								<script src="https://gist.github.com/cpeleties/138b25eda42c527be5d1efe0fb91bf8f.js"></script>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+						
+					<section class="split contact">
+						<section>
+							<h3>Phone</h3>
+							<p>(+44) 7449316272</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>peleties.c@gmail.com</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://uk.linkedin.com/in/chrispeleties" class="icon brands alt fa-linkedin"><span class="label"></span></a></li>
+								<li><a href="https://github.com/cpeleties" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>Christopher Peleties</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

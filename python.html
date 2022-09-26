@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Christopher Peleties</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+                    <nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="sql.html">SQL</a></li>
+							<li class="active"><a href="python.html">Python</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://uk.linkedin.com/in/chrispeleties" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+						
+							<li><a href="https://github.com/cpeleties" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">August 2022</span>
+									<h1>Python Natural Language<br />
+									and Web Scraping</h1>
+									<p>So far throughout my data science journey I have noticed a reccurring theme involving the difficulties of obtaining data, in many cases it is down to the data scientist to obtain the dataset that they wish to work with.
+										This peaked an interest into web-scraping, and its many uses.</p> 
+								</header>
+								<div class="image main"><img src="images/tripadvisor.jpg" alt="" /></div>
+								<h3>Scraping Project Gutenberg</h3>
+								<p> Having previously come across project Gutenberg, a collection of novels in the public domain, I decided it would be an excellent place to begin scraping.
+									<br/> Using the beautifulsoup package, the html from the page could be parsed and from this the text elements are extracted. Using the natural language toolkit, the text is converted to word tokens using the tokenizer function.
+								All words are then converted to lower case in order to prevent the same words being treated seperately due to capital letters. Finally, common filler words known as 
+							'stopwords' are identified within the list of tokens and removed to produce more insightful language analysis. </p>
+							
+								<script src="https://gist.github.com/cpeleties/d314a675130c6fc3451fbcef792293ce.js"></script>
+
+								
+								<p>The language analysis was carried out on the novel Oliver Twist, a graph showing the most common 25 words and their frequencies along with 
+									a dispersion plot showing the instances of 4 main characters were produced as presented below.
+								</p>
+								<span class="image left"><img src="images/frequencydist.png" alt="" /></span>
+								<span class="image right"><img src="images/dispersionplot.png" alt="" /></span>
+
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+
+								<h3>Scraping Tripadvisor Reviews</h3>
+								<p> I felt a desire to apply this concept to something more useful. It is important for many buisinesses to keep track of their customer satisfaction and this means keeping track
+									of their reviews on reputable sites such as Tripadvisor, therefore it is neccesary to first scrape these reviews in order for them to be analysed. This brought additional challenges such as continually updating web pages, pop-ups and dynamic elements.</p>
+								</p>
+								
+								<p>For this task, the selenium library was used as it is better used for more complex projects. It runs an automated browser to excecute the task and navigate the website as if it were controlled by a user, making 
+									navigation of pop ups and multiple pages possible. Initially, two pop ups were to be located and closed, this was achieved using the Xpath of the close button to locate the element
+									and then command the program to click the element.</p>
+									<span class="image right"><img src="images/wordcloud.png" alt="" /></span>
+									<p>The script was then set up to navigate to the reviews section of the Tottenham Hotspur Stadium Tripadvisor page, before writing each review and title to a CSV file and selecting the next page button.
+										From this, the wordcloud library allowed the generation of a wordcloud, displaying the most common words from the CSV file list in a graphical format
+										this was displayed using matplotlib.
+									</p>
+								<script src="https://gist.github.com/cpeleties/72b5b9cf5c4ea9d7503dec2b2a8fb012.js"></script>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section>
+								<h3>Phone</h3>
+								<p>(+44) 7449316272</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p>peleties.c@gmail.com</p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://uk.linkedin.com/in/chrispeleties" class="icon brands alt fa-linkedin"><span class="label"></span></a></li>
+									<li><a href="https://github.com/cpeleties" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>Christopher Peleties</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
